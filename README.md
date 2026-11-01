@@ -54,7 +54,7 @@ Las rutas se definen en [`src/routes/Index.jsx`](src/routes/Index.jsx). El layou
 **Requisito:** Node.js compatible con la versión de Vite utilizada y npm.
 
 ```bash
-git clone https://github.com/DevCodeBryan/web-petshop.git
+git clone https://github.com/BryanOnKeys/web-petshop.git
 cd web-petshop
 npm install
 npm run dev
@@ -94,6 +94,6 @@ src/
 
 ## Autor
 
-**Bryan** — [@DevCodeBryan](https://github.com/DevCodeBryan)
+**Bryan** — [@BryanOnKeys](https://github.com/BryanOnKeys)
 
 Este repositorio forma parte de mi portafolio de desarrollo de software.
