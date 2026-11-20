@@ -1,15 +1,24 @@
 # Patitas Felices
 
-Tienda de demostración para perros y gatos en español, con precios en soles. El proyecto forma parte del portafolio de [BryanOnKeys](https://github.com/BryanOnKeys).
+**Tienda de demostración para perros y gatos, en español y con precios en soles.**
 
-- Catálogo con búsqueda, filtros, ofertas, favoritos y disponibilidad por presentación.
-- Carrito persistente, cálculo de entrega o recojo y confirmación con referencia de pedido.
-- Perfil local con pedidos, recompra y reservas de baño, peluquería o corte de uñas.
-- Páginas de ayuda, entrega, guías y descripción de la tienda.
+[Ver la tienda en GitHub Pages](https://bryanonkeys.github.io/web-petshop/) · [Ejecutar en local](#ejecutar-en-local)
 
-Los precios, el stock, las tarifas y los horarios son de demostración. Los registros usan el almacenamiento del navegador. El checkout simula el pago al recibir sin cobrar, enviar pedidos ni solicitar datos de tarjeta. La ruta de acceso anterior abre el perfil local.
+![Portada de Patitas Felices con búsqueda, categorías y acceso al carrito](docs/portada.jpg)
 
-## Ejecutar
+## Qué puedes probar
+
+| Sección | Funcionalidad |
+| --- | --- |
+| Catálogo | Busca por nombre o marca y filtra por mascota, categoría, etapa de vida, precio y disponibilidad. Explora ofertas y guarda favoritos. |
+| Producto | Cambia la presentación, consulta su stock y elige cuántas unidades agregar. |
+| Compra | Edita el carrito, calcula el delivery por distrito de Lima o elige recojo. Cada pedido genera una referencia para consultarlo en el historial. |
+| Servicios | Elige baño, peluquería o corte de uñas, guarda un turno y cancélalo desde tu perfil. |
+| Cuenta y ayuda | Edita tu perfil local, repite un pedido y consulta las condiciones de entrega y las guías de compra. |
+
+El stock, los precios, los envíos y los horarios usan datos de demostración. Los favoritos, el carrito, los pedidos y las reservas se guardan en el navegador. El pago al recibir es simulado.
+
+## Ejecutar en local
 
 Requiere Node.js 22 o superior y npm.
 
@@ -20,17 +29,19 @@ npm ci
 npm run dev
 ```
 
-`npm test` verifica filtros, cantidades, stock, tarifas, pedidos, reservas y restauración de datos. `npm run lint` comprueba el código y `npm run build` genera `dist/`. Usa `npm run preview` para inspeccionar la compilación. Al alojar el build, configura el servidor para servir `index.html` en rutas de React Router.
+Abre la URL que indique Vite. Usa `npm test` para verificar filtros, stock, tarifas, pedidos, reservas y recuperación de datos. Ejecuta `npm run lint` para revisar el código y `npm run build` para generar `dist/`.
 
-## Código
+## Cómo está organizado
 
 | Ruta | Responsabilidad |
 | --- | --- |
-| `src/features/catalog` | Productos, presentaciones, imágenes, precios y filtros. |
-| `src/features/commerce` | Inventario de demostración, cotización, carrito, pedidos, reservas y persistencia. |
-| `src/pages` | Vistas de la tienda, compra, cuenta y ayuda. |
-| `src/components` | Navegación, pie de página, tarjetas, campos y elementos compartidos. |
-| `src/routes/Index.jsx` | Rutas y enlaces heredados de categorías. |
+| `src/features/catalog` | Productos, presentaciones, precios y filtros. |
+| `src/features/commerce` | Carrito, cálculo de entrega, pedidos, reservas y persistencia. |
+| `src/components` y `src/pages` | Interfaz compartida y pantallas de la tienda. |
+| `src/routes` | Navegación y enlaces de las categorías existentes. |
 | `src/styles` | Sistema visual y layouts adaptables. |
+| `test/commerce.test.mjs` | Pruebas de las reglas de compra y reservas. |
 
-La estructura del catálogo tomó como referencia los filtros por mascota, presentación y etapa de [SuperPet](https://www.superpet.pe/perro/alimentos-y-snacks) y la elección de entrega o recojo de [Mascoterías](https://mascoterias.com/). La portada usa la fotografía generada de un perro y un gato en un estudio de tonos melocotón, optimizada en `src/assets/store/patitas-hero.webp`.
+GitHub Actions comprueba el código, ejecuta las pruebas y publica la compilación de `main` en GitHub Pages. Las rutas de esa versión usan `#` para que los enlaces a productos y al carrito funcionen al abrirlos o recargarlos.
+
+Proyecto de portafolio de [BryanOnKeys](https://github.com/BryanOnKeys). La navegación por categorías y las opciones de entrega tomaron como referencia [SuperPet](https://www.superpet.pe/perro/alimentos-y-snacks) y [Mascoterías](https://mascoterias.com/).

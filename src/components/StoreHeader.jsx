@@ -35,6 +35,13 @@ function SearchBox({ initial }) {
   );
 }
 
+function skipToContent(event) {
+  const main = document.getElementById('main');
+  if (!main) return;
+  event.preventDefault();
+  main.focus();
+}
+
 export default function StoreHeader() {
   const state = useShop();
   const location = useLocation();
@@ -43,7 +50,7 @@ export default function StoreHeader() {
 
   return (
     <header className="store-header">
-      <a className="skip-link" href="#main">Ir al contenido</a>
+      <a className="skip-link" href="#main" onClick={skipToContent}>Ir al contenido</a>
       <div className="utility-bar">
         <div className="container utility-inner">
           <span><LuMapPin aria-hidden="true" /> Lima, Perú</span>
